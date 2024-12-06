@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>So'z kiriting</title>
+ <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        input {
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" oninput="document.querySelector('p').innerHTML = this.value"><br>
+    <button onclick="qizil()">qizil</button> <button onclick="yashil()">yashil</button>
+    <p></p>
+    <script>
+        function qizil() {
+            document.querySelector('p').style['color'] = 'red'
+        }
+
+    </script>
+    <br><br>
+    <script>
+        function yashil() {
+            document.querySelector('p').style['color'] = 'green'
+        }
+    </script>
+</body>
+</html>

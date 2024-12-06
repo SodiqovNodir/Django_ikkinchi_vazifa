@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Isometric Social Media Menu</title>
+<style>
+    *
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg,#9ad751,#2196f3);
+}
+.menu
+{
+    position: relative;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu .toggle
+{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    cursor: pointer;
+    font-size: 2em;
+    transition: 1.25s;
+    z-index: 1000;
+}
+.menu.active .toggle
+{
+transform: rotate(360deg);
+box-shadow: 0 6px 8px rgba(0,0,0,0.15), 0 0 2px #333, 0 0 0 8px #fff;
+}
+.menu li
+{
+    position: absolute;
+    left: 0;
+    list-style: none;
+    transition: 0.5s;
+    transform: rotate(calc(360deg/8 * var(--i)));
+    transform-origin: 140px;
+    scale: 0;
+    transition-delay: calc(0.05s * var(--i));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu.active li
+{
+    scale: 1;
+}
+.menu li a
+{
+    position: relative;
+    display: flex;
+    transform: rotate(calc(360deg/-8 * var(--i)));
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.75em;
+    color: var(--crl);
+    box-shadow: 0 3px 4px rgba(0,0,0,0.15);
+    transition: 0.5s;
+}
+.menu li:hover a
+{
+    font-size: 2.5em;
+    box-shadow: 0 0 0 2px var(--crl), 0 0 0 6px #fff;
+}
+</style>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="toggle"><ion-icon name="share-social"></ion-icon></div>
+        <li style="--i:0;--crl:#1877f2;">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+        </li>
+        <li style="--i:1;--crl:#25d366;">
+            <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
+        </li>
+        <li style="--i:2;--crl:#1da1f2;">
+            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+        </li>
+        <li style="--i:3;--crl:#ea4c89;">
+            <a href="#"><ion-icon name="logo-dribbble"></ion-icon></a>
+        </li>
+        <li style="--i:4;--crl:#0a66c2;">
+            <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+        </li>
+        <li style="--i:5;--crl:#c32aa3;">
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+        </li>
+        <li style="--i:6;--crl:#bd081c;">
+            <a href="#"><ion-icon name="logo-pinterest"></ion-icon></a>
+        </li>
+        <li style="--i:7;--crl:#ff0000;">
+            <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+        </li>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        let toggle = document.querySelector('.toggle')
+        let menu = document.querySelector('.menu')
+        toggle.onclick = function () {
+            menu.classList.toggle('active')
+        }
+    </script>
+</body>
+
+</html>
